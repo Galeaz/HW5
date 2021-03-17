@@ -15,19 +15,19 @@ public:
 	student() : name("unknown"), gradeLevel("unknown"), GPA(0.0)
 	{}
 
-	//mutator 
+	//mutator
 	void setName(string newName)
 	{
 		name = newName;
 	}
 
-	//mutator 
+	//mutator
 	void setGradeLevel(string newGradeLevel)
 	{
 		gradeLevel = newGradeLevel;
 	}
 
-	//mutator 
+	//mutator
 	void setGPA(double newGPA)
 	{
 		GPA = newGPA;
@@ -36,7 +36,8 @@ public:
 	//overloading operator <<
 	friend ostream& operator <<(ostream& outs, const student& obj)
 	{
-		outs << obj.name << ", " << obj.gradeLevel << ", " << obj.GPA;return outs;
+		outs << obj.name << ", " << obj.gradeLevel << ", " << obj.GPA;
+		return outs;
 	}
 
 	//overloading operator == 
@@ -51,7 +52,8 @@ public:
 	//overloading operator <
 	friend bool operator <(const student& obj1, const student& obj2)
 	{
-		if (obj1.name < obj2.name)return true;
+		if (obj1.name < obj2.name)
+			return true;
 		else
 			return false;
 	}
