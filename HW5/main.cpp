@@ -3,6 +3,8 @@
 // Description: Chapter 5 Solution
 
 #include "input.h"
+#include "vector.h"
+#include "list.h"
 #include <iostream>
 #include <string>
 
