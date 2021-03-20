@@ -45,10 +45,12 @@ public:
     
     
     void insertNode(studentsArray student);
+    void deleteNode(studentsArray student);
     
     void display() const;
 };
 
+/*
 template <class Item>
 class node_iterator : public iterator<forward_iterator_tag, Item>
 {
@@ -82,5 +84,5 @@ public:
     }
 private:
     node<Item>* current;
-};
+};*/
 #endif
