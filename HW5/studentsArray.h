@@ -31,6 +31,8 @@ public:
 	//Postcondition: deletes dynamic array
 	~studentsArray();
 
+	friend ostream& operator<<(ostream& os, const studentsArray& aStudent);
+
 	void display(); // ERASE TESTER **************************************************************************************************
 
 private:

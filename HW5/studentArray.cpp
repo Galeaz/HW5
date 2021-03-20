@@ -44,3 +44,9 @@ void studentsArray::display()
 	for (int index = 0; index < size; index++)
 		cout << student[index] << '\n';
 }
+
+ostream& operator<<(ostream& outs, const studentsArray& aStudent)
+{
+	outs << '(' << aStudent.student[0] << ", " << aStudent.student[1] << ", " << aStudent.student[2] << ')';
+	return outs;
+}

@@ -5,7 +5,7 @@
 #include "list.h"
 //Added studentArray for use in the list
 
-LinkedList::LinkedList() : head(NULL)
+LinkedList::LinkedList() : head(NULL), tail(NULL), size(0)
 {}
 
 bool LinkedList::empty() const
@@ -45,7 +45,7 @@ void LinkedList::clear()
 
 void read(char option)
 {
-
+    // if C call push_front(), if F cal push_back()
 }
 
 void LinkedList::push_back(studentsArray student)
@@ -92,20 +92,18 @@ void back();                // outputs the tail
 
 void LinkedList::display() const
 {
-    ListNode* nodePtr;  // To move through the list
-
-    // Position nodePtr at the head of the list.
-    nodePtr = head;
-
-    // While nodePtr points to a node, traverse
-    // the list.
-    while (nodePtr)
+    if (head == NULL)
+        cout << "The list is empty.\n";
+    else
     {
-        // Display the value in this node.
-        //cout << nodePtr->array << endl;
-
-        // Move to the next node.
-        nodePtr = nodePtr->next;
+        ListNode* currentPtr;
+        currentPtr = head;
+        while (currentPtr != NULL)
+        {
+            cout << currentPtr->array << '\n';
+            currentPtr = currentPtr->next;
+        }
+        cout << '\n';
     }
 }
 

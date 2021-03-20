@@ -21,7 +21,7 @@ struct ListNode
 class LinkedList
 {
 private:
-    struct Iterator;
+    //struct Iterator;
 
     ListNode* head;            // List head pointer
     ListNode* tail;            // List tail pointer
