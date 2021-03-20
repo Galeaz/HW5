@@ -50,3 +50,14 @@ ostream& operator<<(ostream& outs, const studentsArray& aStudent)
 	outs << '(' << aStudent.student[0] << ", " << aStudent.student[1] << ", " << aStudent.student[2] << ')';
 	return outs;
 }
+
+void tester() /********************************THIS GOES IN MAIN TO TEST**************************************************/
+{
+	string student1[3] = { "N","A", "H" };
+	string student2[5] = { "N","A", "H", ".","." };
+	//studentsArray studentTester;
+	//studentsArray studentTester(student1);
+	//studentsArray studentTester(5);
+	studentsArray studentTester(student2, 5);
+	studentTester.display();
+}

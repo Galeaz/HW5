@@ -5,6 +5,7 @@
 #include "input.h"
 #include "vector.h"
 #include "list.h"
+#include "student.h"
 #include <iostream>
 #include <string>
 
@@ -62,11 +63,11 @@ int menuOption()
 
 void tester() /*******************************************************************************************************/
 {
-	string student1[3] = { "N","A", "H" };
-	string student2[5] = { "N","A", "H", ".","."};
-	//studentsArray studentTester;
-	//studentsArray studentTester(student1);
-	//studentsArray studentTester(5);
-	studentsArray studentTester(student2,5);
-	studentTester.display();
+	cout << "\nTESTING LIST\n";
+	
+	LinkedList CMPR131;
+	//CMPR131.push_back(student1);
+	//CMPR131.push_back(student1);
+	//CMPR131.push_back(student2);
+	//CMPR131.display();
 }
