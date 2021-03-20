@@ -9,8 +9,6 @@
 #include <iostream>
 #include <string>
 
-#include "studentsArray.h" //ERASE *********************************************************************************************
-
 using namespace std;
 
 //Precondition: N/A
@@ -65,6 +63,7 @@ void tester() /*****************************************************************
 {
 	cout << "\nTESTING LIST\n";
 	
+	student student1, student2;
 	LinkedList CMPR131;
 	//CMPR131.push_back(student1);
 	//CMPR131.push_back(student1);
