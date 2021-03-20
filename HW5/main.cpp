@@ -8,11 +8,15 @@
 #include <iostream>
 #include <string>
 
+#include "studentsArray.h" //ERASE *********************************************************************************************
+
 using namespace std;
 
 //Precondition: N/A
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
+
+void tester();
 
 int main()
 {
@@ -22,7 +26,7 @@ int main()
 		{
 		case 0:  exit(0);
 		case 1:  system("cls"); /*vector();*/ break;
-		case 2:  system("cls"); /*list();*/ break;
+		case 2:  system("cls"); tester(); break;
 		case 3:  system("cls"); /*vector/list();*/ break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}
@@ -54,4 +58,15 @@ int menuOption()
 	int option = inputInteger("\t    Option: ", 0, 3);
 	cin.clear();
 	return option;
+}
+
+void tester() /*******************************************************************************************************/
+{
+	string student1[3] = { "N","A", "H" };
+	string student2[5] = { "N","A", "H", ".","."};
+	//studentsArray studentTester;
+	//studentsArray studentTester(student1);
+	//studentsArray studentTester(5);
+	studentsArray studentTester(student2,5);
+	studentTester.display();
 }
