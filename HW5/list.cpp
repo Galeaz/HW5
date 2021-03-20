@@ -48,18 +48,18 @@ void read(char option)
     // if C call push_front(), if F cal push_back()
 }
 
-void LinkedList::push_back(studentsArray student)
+void LinkedList::push_back(student student)
 {
     if (head == NULL)
     {
         head = new ListNode;
-        head->array = student;
+        head->theStudent = student;
         head->next = NULL;
     }
     else
     {
         ListNode* newNode = new ListNode;
-        newNode->array = student;
+        newNode->theStudent = student;
         newNode->next = NULL;
 
         ListNode* tempPtr = head;
@@ -72,10 +72,10 @@ void LinkedList::push_back(studentsArray student)
     }
 }
 
-void LinkedList::push_front(studentsArray student)
+void LinkedList::push_front(student student)
 {
     ListNode* newNode = new ListNode;
-    newNode->array = student;
+    newNode->theStudent = student;
     newNode->next = NULL;
 
     ListNode* currentPtr;
@@ -86,7 +86,7 @@ void LinkedList::push_front(studentsArray student)
 }
 
 void pop_front();           // checks if list empty and deletes the first node (head)
-void pop_back(studentsArray student); // checks if list empty and deletes last node (tail)
+void pop_back(student student); // checks if list empty and deletes last node (tail)
 void front();               // outputs the head
 void back();                // outputs the tail
 
@@ -100,14 +100,14 @@ void LinkedList::display() const
         currentPtr = head;
         while (currentPtr != NULL)
         {
-            cout << currentPtr->array << '\n';
+            cout << currentPtr->theStudent << '\n';
             currentPtr = currentPtr->next;
         }
         cout << '\n';
     }
 }
 
-void LinkedList::insertNode(studentsArray student)
+void LinkedList::insertNode(student student)
 {
     ListNode* newNode;					// A new node
     ListNode* nodePtr;					// To traverse the list
@@ -115,7 +115,7 @@ void LinkedList::insertNode(studentsArray student)
 
     // Allocate a new node and store num there.
     newNode = new ListNode;
-    newNode->array = student;
+    newNode->theStudent = student;
 
     // If there are no nodes in the list
     // make newNode the first node
@@ -154,7 +154,7 @@ void LinkedList::insertNode(studentsArray student)
     }
 }
 
-void LinkedList::deleteNode(studentsArray student)
+void LinkedList::deleteNode(student student)
 {
     ListNode* nodePtr;       // To traverse the list
     ListNode* previousNode = nullptr;  // To point to the previous node

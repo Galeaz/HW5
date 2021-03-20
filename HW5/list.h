@@ -7,14 +7,14 @@
 
 #pragma once
 
-#include "studentsArray.h"
+#include "student.h"
 #include "input.h"
 #include <iostream>
 using namespace std;
 
 struct ListNode
 {
-    studentsArray array;
+    student theStudent;
     ListNode* next;
 };
 
@@ -40,10 +40,10 @@ public:
     void clear();               // deletes the list
     void resize();   // changes the size of the list by adding or eliminating elements at the end of it
     void read(char option);     // read file and call the respect function to add items into list (C = backwards, F = normal)
-    void push_back(studentsArray student); // checks if list empty and inserts a new node at the tail
-    void push_front(studentsArray student); // checks if list empty and inserts a new node at the head
+    void push_back(student student); // checks if list empty and inserts a new node at the tail
+    void push_front(student student); // checks if list empty and inserts a new node at the head
     void pop_front();           // checks if list empty and deletes the first node (head)
-    void pop_back(studentsArray student); // checks if list empty and deletes last node (tail)
+    void pop_back(student student); // checks if list empty and deletes last node (tail)
     void front();               // outputs the head
     void back();                // outputs the tail
     
@@ -53,8 +53,8 @@ public:
     void sort();                // sorts the list
     
     
-    void insertNode(studentsArray student);
-    void deleteNode(studentsArray student);
+    void insertNode(student student);
+    void deleteNode(student student);
     
     void display() const;
 };
