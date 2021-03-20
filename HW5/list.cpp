@@ -5,6 +5,7 @@
 #include "list.h"
 //Added studentArray for use in the list
 
+
 struct LinkedList::ListNode
 {
 studentsArray array;           // The students info (object) in this node
@@ -16,7 +17,7 @@ LinkedList::LinkedList()
     head = nullptr;
 }
 
-void LinkedList::appendNode(studentsArray student)
+void LinkedList::push_back(studentsArray student)
 {
     ListNode* newNode;  // To point to a new node
     ListNode* nodePtr;  // To move through the list
@@ -42,6 +43,7 @@ void LinkedList::appendNode(studentsArray student)
         // Insert newNode as the last node.
         nodePtr->next = newNode;
     }
+    delete newNode; // test this **************************************************************************
 }
 
 void LinkedList::display() const
