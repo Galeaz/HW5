@@ -5,46 +5,90 @@
 #include "list.h"
 //Added studentArray for use in the list
 
+LinkedList::LinkedList() : head(NULL)
+{}
 
-struct LinkedList::ListNode
+bool LinkedList::empty() const
 {
-studentsArray array;           // The students info (object) in this node
-struct ListNode* next;  // To point to the next node
-};
+    return (head == NULL);
+}
 
-LinkedList::LinkedList()
+void LinkedList::clear()
 {
-    head = nullptr;
+    ListNode* currentPtr;
+    ListNode* PreviousPtr;
+    currentPtr = head;
+    PreviousPtr = currentPtr;
+
+    while (currentPtr != NULL)
+    {
+        PreviousPtr = currentPtr;
+        currentPtr = currentPtr->next;
+        delete PreviousPtr;
+    }
+    head = NULL;
+}
+
+/*void LinkedList::resize()
+{
+    int newSize = inputInteger("Enter the new size(1..100): ", 1, 100);
+
+    ListNode* tempPtr;
+    tempPtr = head;
+    while (tempPtr->next)
+        tempPtr = tempPtr->next;
+    theArray = NULL;
+    theArray = new int[size];
+    for (int i = 0; i <= size; i++)
+        theArray[i] = theList[i];
+}*/
+
+void read(char option)
+{
+
 }
 
 void LinkedList::push_back(studentsArray student)
 {
-    ListNode* newNode;  // To point to a new node
-    ListNode* nodePtr;  // To move through the list
-
-    // Allocate a new node and store num there.
-    newNode = new ListNode;
-    newNode->array = student;
-    newNode->next = nullptr;
-
-    // If there are no nodes in the list
-    // make newNode the first node.
-    if (!head)
-        head = newNode;
-    else  // Otherwise, insert newNode at end.
+    if (head == NULL)
     {
-        // Initialize nodePtr to head of list.
-        nodePtr = head;
-
-        // Find the last node in the list.
-        while (nodePtr->next)
-            nodePtr = nodePtr->next;
-
-        // Insert newNode as the last node.
-        nodePtr->next = newNode;
+        head = new ListNode;
+        head->array = student;
+        head->next = NULL;
     }
-    delete newNode; // test this **************************************************************************
+    else
+    {
+        ListNode* newNode = new ListNode;
+        newNode->array = student;
+        newNode->next = NULL;
+
+        ListNode* tempPtr = head;
+
+        while (tempPtr->next != NULL)
+            tempPtr = tempPtr->next;
+
+        newNode->next = tempPtr->next;
+        tempPtr->next = newNode;
+    }
 }
+
+void LinkedList::push_front(studentsArray student)
+{
+    ListNode* newNode = new ListNode;
+    newNode->array = student;
+    newNode->next = NULL;
+
+    ListNode* currentPtr;
+    currentPtr = head;
+
+    newNode->next = currentPtr->next;
+    currentPtr->next = newNode;
+}
+
+void pop_front();           // checks if list empty and deletes the first node (head)
+void pop_back(studentsArray student); // checks if list empty and deletes last node (tail)
+void front();               // outputs the head
+void back();                // outputs the tail
 
 void LinkedList::display() const
 {

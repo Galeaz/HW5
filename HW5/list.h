@@ -8,17 +8,24 @@
 #pragma once
 
 #include "studentsArray.h"
+#include "input.h"
 #include <iostream>
 using namespace std;
+
+struct ListNode
+{
+    studentsArray array;
+    ListNode* next;
+};
 
 class LinkedList
 {
 private:
-    struct ListNode;
     struct Iterator;
 
     ListNode* head;            // List head pointer
     ListNode* tail;            // List tail pointer
+    int size;
 
 public:
     // Constructor
@@ -28,8 +35,10 @@ public:
     ~LinkedList();
 
     // Linked list operations 
+    bool empty() const;         // Checks if the list is empty
+
     void clear();               // deletes the list
-    void resize();              // changes the size of the list by adding or eliminating elements at the end of it
+    void resize();   // changes the size of the list by adding or eliminating elements at the end of it
     void read(char option);     // read file and call the respect function to add items into list (C = backwards, F = normal)
     void push_back(studentsArray student); // checks if list empty and inserts a new node at the tail
     void push_front(studentsArray student); // checks if list empty and inserts a new node at the head
