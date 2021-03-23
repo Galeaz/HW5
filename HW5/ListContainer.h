@@ -12,6 +12,7 @@ private:
 	list<string> List;
 public:
 	ListContainer();
+	//forgot to do the destructor, will add it later - minh
 	void display();
 	void clear();
 	void resize();
