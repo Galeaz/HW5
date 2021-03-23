@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="input.h" />
     <ClInclude Include="list.h" />
+    <ClInclude Include="ListContainer.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>
