@@ -55,7 +55,7 @@ int menuOption()
 	cout << "\t" << char(204) << string(42, char(205)) << char(185) << "\n";
 	cout << "\t" << char(186) << "   1: Vector Container                    " << char(186) << "\n";
 	cout << "\t" << char(186) << "   2: List Container                      " << char(186) << "\n";
-	cout << "\t" << char(186) << "   3: Aplication using Vector or List Container(?)   " << char(186) << "\n";
+	cout << "\t" << char(186) << "   3: Aplication using a List Container   " << char(186) << "\n";
 	cout << "\t" << char(199) << string(42, char(196)) << char(182) << "\n";
 	cout << "\t" << char(186) << "   0: Exit                                " << char(186) << "\n";
 	cout << "\t" << char(200) << string(42, char(205)) << char(188) << "\n";
