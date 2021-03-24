@@ -143,7 +143,7 @@ void menu3()
     intList f1;
     do
     {
-        cout << "3> Application using Vector and/or List container\n";
+        cout << "\n3> Application using Vector and/or List container\n";
         cout << string(60, char(205));
         cout << "\n\t  A> Add an integer\n";
         cout << "\t  B> Delete an integer\n";
