@@ -4,7 +4,6 @@
 
 #include "input.h"
 #include "vector.h"
-#include "list.h"
 #include "student.h"
 #include <iostream>
 #include <string>
@@ -65,18 +64,6 @@ int menuOption()
 	return option;
 }
 
-void tester() /*******************************************************************************************************/
-{
-	cout << "\nTESTING LIST\n";
-	
-	student student1, student2;
-	LinkedList CMPR131;
-	//CMPR131.push_back(student1);
-	//CMPR131.push_back(student1);
-	//CMPR131.push_back(student2);
-	//CMPR131.display();
-}
-
 char menu2()
 {
 	system("cls");
@@ -127,6 +114,19 @@ void part2()
 		case 'f':test.readEnd(); break;
 		case 'g':test.pop_Back(); break;
 
+		case 'h':/*function();*/ break;
+		case 'i':/*function();*/ break;
+		case 'j':/*function();*/ break;
+		case 'k':/*function();*/ break;
+		case 'l':/*function();*/ break;
+		case 'm':/*function();*/ break;
+		case 'n':/*function();*/ break;
+		case 'o':/*function();*/ break;
+		case 'p':/*function();*/ break;
+		case 'q':/*function();*/ break;
+		case 'r':/*function();*/ break;
+		case 's':/*function();*/ break;
+
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 
 		}
@@ -136,6 +136,7 @@ void part2()
 		system("pause");
 	}
 }
+
 void menu3()
 {
     char choice;

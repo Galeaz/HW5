@@ -140,14 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="intList.cpp" />
-    <ClCompile Include="list.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="input.h" />
     <ClInclude Include="intList.h" />
-    <ClInclude Include="list.h" />
     <ClInclude Include="ListContainer.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="vector.h" />
