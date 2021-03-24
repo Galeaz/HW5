@@ -62,7 +62,7 @@ void intList::dispFreq() const
 {
 	if (empty())
 	{
-		cout << "The list is empty!";
+		cout << "\nThe list is empty!\n";
 		return;
 	}
 	for (int i = 0; i <= 100; i++)
