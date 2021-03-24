@@ -11,6 +11,7 @@
 #include <list>
 #include <iterator>
 #include "ListContainer.h"
+#include "intList.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ void tester();
 
 char menu2();
 void part2();
-
+void menu3();
 int main()
 {
 	do
@@ -31,7 +32,7 @@ int main()
 		case 0:  exit(0);
 		case 1:  system("cls"); /*vector();*/ break;
 		case 2:  system("cls"); part2(); break;//tester(); break;
-		case 3:  system("cls"); /*vector/list();*/ break;
+		case 3:  system("cls"); menu3(); break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}
 		cout << '\n';
@@ -134,4 +135,36 @@ void part2()
 		cout << "\n\n";
 		system("pause");
 	}
+}
+void menu3()
+{
+    char choice;
+    string allowed = "ABCD0";
+    intList f1;
+    do
+    {
+        cout << "3> Application using Vector and/or List container\n";
+        cout << string(60, char(205));
+        cout << "\n\t  A> Add an integer\n";
+        cout << "\t  B> Delete an integer\n";
+        cout << "\t  C> Display input integers\n";
+        cout << "\t  D> display frequencies of integers\n";
+        cout << "\t  0> return\n";
+        cout << string(60, char(205));
+        choice = toupper(inputChar("\nOption:", allowed));
+        if(choice == '0')
+            break;
+
+
+        switch (choice)
+        {
+        case('A'): f1.addInteger(); break;
+        case('B'): f1.deleteInteger(); break;
+        case('C'): f1.dispIntegers(); break;
+        case('D'): f1.dispFreq(); break;
+
+        }
+
+    } while (true);
+   return;
 }
