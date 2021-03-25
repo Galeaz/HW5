@@ -287,12 +287,6 @@ void  Vector::RangeErase()
 //Insert a new entry at the iterator
 void  Vector::Insert()
 {
-	/*if (v1.empty())
-	{
-		cout << "\nvector does not have reserved space\n";
-		return;
-
-	}*/
 	student Student;
 
 	string name;
