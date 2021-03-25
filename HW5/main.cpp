@@ -106,7 +106,7 @@ void part2()
 		switch (tolower(option))
 		{
 		case '0':break;
-		case 'a': test.display(); break;
+		case 'a': test.clear(); break;
 		case 'b': test.resize(); break;
 		case 'c':test.readFront(); break;
 		case 'd':test.pop_Front(); break;

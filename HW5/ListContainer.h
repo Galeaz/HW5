@@ -36,7 +36,7 @@ public:
 	void printAllElementsrBeginrEnd();
 	void eraseWithIterator();
 	void eraseRange();
-	void insertAtIterator() {};
+	void insertAtIterator();
 	void swap();
 	void sort();
 };
