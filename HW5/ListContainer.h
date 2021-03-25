@@ -30,6 +30,9 @@ public:
 	void printAllElementsrBeginrEnd();
 	void eraseWithIterator();
 	void eraseRange();
+	void insertAtIterator();
+	void swap();
+	void sort();
 };
 
 ListContainer::ListContainer()
@@ -259,9 +262,19 @@ void ListContainer::eraseRange()
 }
 
 // QQQQQQQ
+void ListContainer::insertAtIterator()
+{
 
+}
 
 // RRRRRRR
+void ListContainer::swap()
+{
 
+}
 
 // SSSSSSS
+void ListContainer::sort()
+{
+
+}
