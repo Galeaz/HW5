@@ -143,7 +143,7 @@ void  Vector::readFile()
 	{
 		getline(file, data);
 
-		//v1.push_back(data);
+		v1.push_back(data);
 
 		if (file.eof())
 			break;

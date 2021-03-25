@@ -3,134 +3,331 @@
 // Description: vector implementation
 
 #include <iostream>
-#include<string>
 #include"vector.h"
 #include"input.h"
 #include"student.h"
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<fstream>
+#include<iterator>
 
 using namespace std;
 
-
-int main()
+//display
+void Vector::display()
 {
-	student s1;
-	Vector v;
-
-	string input = "0abcdefghijklmnopqrs";
-	char option;
-
-	while (true)
+	for (int i = 0; i < v1.size(); i++)
 	{
-		system("cls");
-		cout << endl << "        Vectors are sequence containers representing arrays that can change in size." << endl << endl;
-		cout << "        1> Vector's member functions" << endl << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << char(205);
-		}
-		cout << endl;
-		cout << "                A> clear() - Removes all elements from the vector (which are destroyed)" << endl;
-		cout << "                B> reserve(n) - Requests that the vector capacity be at least enough to contain n elements" << endl;
-		cout << "                C> resize(n) - Resizes the container so that it contains n elements" << endl;
-		cout << "                D> Read input.dat and push_back(e) - Adds a new element at the end of the vector" << endl;
-		cout << "                E> pop_back() - Removes the last element in the vector" << endl;
-		cout << "                F> front() - Returns a reference to the first element in the vector" << endl;
-		cout << "                G > back() - Returns a reference to the last element in the vector" << endl;
-		cout << "                H > index using at() or []) - Returns a reference to the element at position n in the vector" << endl;
-		cout << "                I > begin() - Returns an iterator pointing to the first element in the vector" << endl;
-		cout << "                J > end() Returns an iterator referring to the past - the - end element in the vector" << endl;
-		cout << "                K > Using iterator begin() and end() returns all elements in the vector" << endl;
-		cout << "                L > rbegin() - Returns a reverse iterator pointing to the last element in the vector" << endl;
-		cout << "                M > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first" << "                                      "
-			<< "element in the vector" << endl;
-		cout << "                N> Using iterator rbegin() and rend() returns all elements in the vector" << endl;
-		cout << "                O > erase(it) - Removes from the vector a single element(using an iterator)" << endl;
-		cout << "                P > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)" << endl;
-		cout << "                Q> insert(it, entry) - Insert a new entry at the iterator." << endl;
-		cout << "                R > swap() - Exchanges the content of the container by another vector's content of the same type" << endl;
-		cout << "                S > Sort - Sorts the vector." << endl;
-		cout << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << "_";
-		}
-		cout << endl;
-		cout << "                0> return" << endl;
-		cout << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << char(205);
-		}
-		cout << endl;
+		cout << "[" << i << "]" << v1[i] << endl;
+	}
+}
 
-		cout << "                Option: " << endl;
-		option = inputChar("", input);
-		if (option == '0')
-			break;
-		switch (toupper(option))
-		{
-		case 'A':
-			v.Clear();
-			break;
-		case 'B':
-			v.Reserve();
-			break;
-		case 'C':
-			v.Resize();
-			break;
-		case 'D':
-			v.readFile();
-			break;
-		case 'E':
-			v.Pop_back();
-			break;
-		case 'F':
-			v.Front();
-			break;
-		case 'G':
-			v.Back();
-			break;
-		case 'H':
-			v.indexAt();
-			break;
-		case 'I':
-			v.Begin();
-			break;
-		case 'J':
-			v.End();
-			break;
-		case 'K':
-			v.returnAllElements();
-			break;
-		case 'L':
-			v.Rbegin();
-			break;
-		case 'M':
-			v.Rend();
-			break;
-		case 'N':
-			v.ReturnEle();
-			break;
-		case 'O':
-			v.Erase();
-			break;
-		case 'P':
-			v.RangeErase();
-			break;
-		case 'Q':
-			v.Insert();
-			break;
-		case 'R':
-			v.Swap();
-			break;
-		case 'S':
-			v.Sort();
-			break;
-		default:
-			cout << "Invalid option" << endl;
-		}
-		system("pause");
+// Removes all elements from the vector(which are destroyed
+void Vector::Clear()
+{
+	v1.clear();
+
+	cout << " The vector has been cleared." << endl;
+}
+
+//Requests that the vector capacity be at least enough to contain n elements"
+void  Vector::Reserve()
+{
+	int newCapacity = inputInteger("Enter the capacity(1..100):", 1, 100);
+
+	v1.reserve(newCapacity);
+
+	cout << "The vector has been reserved " << v1.capacity() << " elements" << endl;
+}
+
+//Resizes the container so that it contains n elements
+void  Vector::Resize()
+{
+	int newSize = inputInteger(" Enter the new size(1..100): ", 1, 100);
+
+	v1.resize(newSize);
+
+	cout << " The vector has been resized to " << v1.size() << " elements." << endl;
+}
+
+//Read input.dat and push_back(e) - Adds a new element at the end of the vector
+void  Vector::readFile()
+{
+	ifstream file;
+	string data;
+
+	file.open("input.dat");
+	if (file.fail())
+	{
+		cout << "ERROR: file1.txt does not found.\n";
+		exit(1);
 	}
 
-	return 0;
+	while (!file.eof())
+	{
+		getline(file, data);
+
+		v1.push_back(data);
+
+		if (file.eof())
+			break;
+	}
+
+	file.close();
+	cout << "\n\tThe vector now has " << v1.size() << " elements.\n";
+}
+
+//Removes the last element in the vector
+void  Vector::Pop_back()
+{
+	if (!v1.empty())
+	{
+		cout << "[" << v1.size() - 1 << "]" << v1.back() << " has been removed from the vector" << endl;
+
+		v1.pop_back();
+
+		cout << "The vector has " << v1.size() << " elements" << endl;
+
+		display();
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+
+
+}
+
+//-Returns a reference to the first element in the vector
+void  Vector::Front()
+{
+	if (!v1.empty())
+	{
+		cout << "The element from the front of the vector: " << "[0]" << v1.front() << endl;
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns a reference to the last element in the vector
+void  Vector::Back()
+{
+	if (!v1.empty())
+	{
+		cout << "The element from the back of the vector: " << "[" << v1.size() - 1 << "]" << v1.back() << endl;
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns a reference to the element at position n in the vector
+void  Vector::indexAt()
+{
+	if (!v1.empty())
+	{
+		int position;
+
+		do
+		{
+			cout << "Enter the index(0.." << v1.size() - 1 << "):";
+			cin >> position;
+
+		} while (position < 0 || position > v1.size());
+
+		cout << "vector.at(" << position << ")" << v1.at(position) << endl;
+		cout << "vector[" << position << "]" << v1[position] << endl;
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns an iterator pointing to the first element in the vector
+void  Vector::Begin()
+{
+	vector<student>::iterator position = v1.begin();
+
+	if (!v1.empty())
+	{
+		cout << "The iterator referring the first element: " << &position << " (" << *position << ")" << endl;
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns an iterator referring to the past - the - end element in the vector
+void  Vector::End()
+{
+	vector<student>::iterator position = v1.end();
+
+	if (!v1.empty())
+	{
+		cout << "The iterator referring to the past-the-end element: " << &position << endl;
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Using iterator begin() and end() returns all elements in the vector
+void  Vector::returnAllElements()
+{
+	vector<student>::iterator position;
+
+	if (!v1.empty())
+	{
+		cout << " Using begin() and end(), the vector contains:" << endl;
+
+		for (position = v1.begin(); position < v1.end(); position++)
+		{
+			cout << "\t" << &position << " (" << *position << ")" << endl;
+		}
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns a reverse iterator pointing to the last element in the vector
+void  Vector::Rbegin()
+{
+	vector<student>::reverse_iterator positionR = v1.rbegin();
+	if (!v1.empty())
+	{
+		cout << " The reverse iterator pointing to the last element: " << &positionR << "(" << *positionR << ")" << endl;
+
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector
+void  Vector::Rend()
+{
+	vector<student>::reverse_iterator positionR = v1.rend();
+	if (!v1.empty())
+	{
+		cout << "The reverse iterator pointing to the theoretical element preceding the first element in the vector: " << &positionR << endl;
+
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Using iterator rbegin() and rend() returns all elements in the vector
+void  Vector::ReturnEle()
+{
+	vector<student>::reverse_iterator positionR;
+
+	if (!v1.empty())
+	{
+		cout << "Using rbegin() and rend(), the vector contains reversed elments:" << endl;
+
+		for (positionR = v1.rbegin(); positionR != v1.rend(); positionR++)
+		{
+			cout << "\t" << &positionR << " (" << *positionR << ")" << endl;
+		}
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Removes from the vector a single element(using an iterator)
+void  Vector::Erase()
+{
+	vector<student>::iterator position = v1.begin();
+	if (!v1.empty())
+	{
+		cout << " An element after the begin iterator " << &position + 1 << " has been removed" << endl;
+		v1.erase(v1.begin() + 1);
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Removes from the vector a range of elements(using iterators)
+void  Vector::RangeErase()
+{
+	vector<student>::iterator positionBegin = v1.begin();
+	vector<student>::iterator positionEnd = v1.end();
+	if (!v1.empty())
+	{
+		cout << " All elements starting at begin iterator " << &positionBegin <<
+			" and going up to end iterator " << &positionEnd << "have been removed." << endl;
+
+		v1.erase(v1.begin(), v1.end());
+	}
+	else
+	{
+		cout << "Empty vector!" << endl;
+	}
+}
+
+//Insert a new entry at the iterator
+void  Vector::Insert()
+{
+	student Student;
+
+	string name;
+	string gradeLevel;
+	double GPA;
+
+	vector<student>::iterator position = v1.begin();
+
+	cout << "Enter a new student name: ";
+	getline(cin, name);
+	cout << endl;
+
+	cout << "Enter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior): ";
+	getline(cin, gradeLevel);
+	cout << endl;
+
+	cout << "Enter his/her GPA (0.0..4.0):";
+	cin >> GPA;
+	cout << endl;
+
+	position = v1.insert(position, Student);
+
+	cout << "The new element has been inserted after the begin iterator." << endl;
+}
+
+// Exchanges the content of the container by another vector's content of the same type
+void  Vector::Swap()
+{
+	cout << "Vector (v2) is initially empty." << endl << endl;
+	cout << "Vector (v1) is empty after swapped with vector (v2)." << endl << endl;
+	cout << "Vector (v2) after swapped with vector (v1)." << endl << endl;
+
+	swap(v1, v2);
+
+	for (int i = 0; i < v2.size(); i++)
+	{
+		cout << "[" << i << "]" << v2[i] << endl;
+	}
+}
+
+// Sorts the vector
+void  Vector::Sort()
+{
+	sort(v1.begin(), v1.end());
+
+	display();
 }
