@@ -196,20 +196,20 @@ void menu1()
 		cout << "\t\tD> Read input.dat and push_back(e) - Adds a new element at the end of the vector" << endl;
 		cout << "\t\tE> pop_back() - Removes the last element in the vector" << endl;
 		cout << "\t\tF> front() - Returns a reference to the first element in the vector" << endl;
-		cout << "\t\tG > back() - Returns a reference to the last element in the vector" << endl;
-		cout << "\t\tH > index using at() or []) - Returns a reference to the element at position n in the vector" << endl;
-		cout << "\t\tI > begin() - Returns an iterator pointing to the first element in the vector" << endl;
-		cout << "\t\tJ > end() Returns an iterator referring to the past - the - end element in the vector" << endl;
-		cout << "\t\tK > Using iterator begin() and end() returns all elements in the vector" << endl;
-		cout << "\t\tL > rbegin() - Returns a reverse iterator pointing to the last element in the vector" << endl;
-		cout << "\t\tM > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first" << "                                      "
+		cout << "\t\tG> back() - Returns a reference to the last element in the vector" << endl;
+		cout << "\t\tH> index using at() or []) - Returns a reference to the element at position n in the vector" << endl;
+		cout << "\t\tI> begin() - Returns an iterator pointing to the first element in the vector" << endl;
+		cout << "\t\tJ> end() Returns an iterator referring to the past - the - end element in the vector" << endl;
+		cout << "\t\tK> Using iterator begin() and end() returns all elements in the vector" << endl;
+		cout << "\t\tL> rbegin() - Returns a reverse iterator pointing to the last element in the vector" << endl;
+		cout << "\t\tM> rend() - Returns a reverse iterator pointing to the theoretical element preceding the first" << "                                      "
 			<< "element in the vector" << endl;
 		cout << "\t\tN> Using iterator rbegin() and rend() returns all elements in the vector" << endl;
-		cout << "\t\tO > erase(it) - Removes from the vector a single element(using an iterator)" << endl;
-		cout << "\t\tP > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)" << endl;
+		cout << "\t\tO> erase(it) - Removes from the vector a single element(using an iterator)" << endl;
+		cout << "\t\tP>  erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)" << endl;
 		cout << "\t\tQ> insert(it, entry) - Insert a new entry at the iterator." << endl;
-		cout << "\t\tR > swap() - Exchanges the content of the container by another vector's content of the same type" << endl;
-		cout << "\t\tS > Sort - Sorts the vector." << endl;
+		cout << "\t\tR> swap() - Exchanges the content of the container by another vector's content of the same type" << endl;
+		cout << "\t\tS> Sort - Sorts the vector." << endl;
 		cout << "        ";
 		cout << string(100, char(205)) << endl;
 		cout << "\t\t0> return" << endl;
