@@ -293,8 +293,8 @@ void  Vector::Insert()
 	int gradeOption;
 	string gradeLevel;
 	double GPA;
-
-	vector<student>::iterator position = v1.begin();
+	vector<student>::iterator position;
+	
 
 	cout << "Enter a new student name: ";
 	cin.ignore(10000, '\n');
@@ -318,8 +318,12 @@ void  Vector::Insert()
 	Student.setName(name);
 	Student.setGradeLevel(gradeLevel);
 	Student.setGPA(GPA);
-	position = v1.insert(position + 1, Student);
-
+	if (!v1.empty())
+	{
+		position = v1.insert(position, Student);
+	}
+	else
+		v1.push_back(Student);
 	cout << "The new element has been inserted after the begin iterator." << endl;
 }
 
