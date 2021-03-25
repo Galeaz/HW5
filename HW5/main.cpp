@@ -31,7 +31,7 @@ int main()
 		{
 		case 0:  exit(0);
 		case 1:  system("cls"); menu1(); break;
-		case 2:  system("cls"); part2(); break;//tester(); break;
+		case 2:  system("cls"); part2(); break;
 		case 3:  system("cls"); menu3(); break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}
@@ -106,7 +106,7 @@ void part2()
 		switch (tolower(option))
 		{
 		case '0':break;
-		case 'a': test.display(); break;
+		case 'a': test.clear(); break;
 		case 'b': test.resize(); break;
 		case 'c':test.readFront(); break;
 		case 'd':test.pop_Front(); break;

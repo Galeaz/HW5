@@ -1,6 +1,6 @@
-
-
-
+//Names: Andrew Thompson and Christopher Gomez
+//Date: 3/23/2021
+//Description: implementation file for the frequency/interger list class
 #include "intList.h"
 
 intList::intList()
@@ -18,7 +18,7 @@ void intList::addInteger()
 }
 void intList::deleteInteger()
 {
-	if (empty())
+	if (list.empty())
 	{
 		cout << "\nThe list is empty!\n";
 		return;
@@ -44,7 +44,7 @@ void intList::deleteInteger()
 void intList::dispIntegers() const
 {
 	cout << "\ncontainer: ";
-	if (!empty()) {
+	if (!list.empty()) {
 		for (auto it = list.begin(); it != list.end(); ++it)
 			cout << *it << ' ';
 		cout << '\n';
@@ -52,15 +52,10 @@ void intList::dispIntegers() const
 	else
 		cout << "Empty\n";
 }
-bool intList::empty() const
-{
-	if (list.size() == 0)
-		return true;
-	return false;
-}
+
 void intList::dispFreq() const
 {
-	if (empty())
+	if (list.empty())
 	{
 		cout << "\nThe list is empty!\n";
 		return;

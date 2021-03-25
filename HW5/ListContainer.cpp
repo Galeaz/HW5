@@ -75,7 +75,6 @@ void ListContainer::pop_Front()
 		List.pop_front();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
@@ -98,8 +97,8 @@ void ListContainer::readEnd()
 	file.open("input.dat");
 	if (file.fail())
 	{
-		cout << "ERROR: file1.txt does not found.\n";
-		exit(1);
+		cout << "ERROR: The file does not found.\n";
+		return;
 	}
 
 	while (!file.eof())
@@ -131,7 +130,6 @@ void ListContainer::pop_Back()
 		List.pop_back();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
@@ -164,7 +162,7 @@ void ListContainer::endIterator()
 	else
 	{
 		auto it = List.end();
-		cout << "\n\tThe iterator referring to the past-the-end element: " << &it;
+		cout << "\n\tThe iterator referring to the past-the-end element: " << &(*it);
 	}
 }
 
@@ -177,7 +175,7 @@ void ListContainer::printAllElementsBeginEnd()
 	{
 		cout << "\n\tUsing begin() and end(), the list contains:\n";
 		for (list<student>::iterator it = List.begin(); it != List.end(); ++it)
-			cout << "\n\t\t" << &it << " (" << *it << ')';
+			cout << "\n\t\t" << &(*it) << " (" << *it << ')';
 	}
 }
 
@@ -201,7 +199,7 @@ void ListContainer::rEnd()
 	else
 	{
 		auto it = List.rend();
-		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &it;
+		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &(*it);
 	}
 }
 
@@ -214,7 +212,7 @@ void ListContainer::printAllElementsrBeginrEnd()
 	{
 		cout << "\n\tUsing begin() and end(), the list contains:\n";
 		for (auto it = List.rbegin(); it != List.rend(); ++it)
-			cout << "\n\t\t" << &it << " (" << *it << ')';
+			cout << "\n\t\t" << &(*it) << " (" << *it << ')';
 	}
 }
 
@@ -226,8 +224,8 @@ void ListContainer::eraseWithIterator()
 	else
 	{
 		auto it = List.begin();
-		List.erase(it);
-		cout << "\n\tAn element after the begin iterator " << &it << " has been removed.\n";
+		cout << "\n\tAn element after the begin iterator " << &(*it) << " has been removed.\n";
+		it = List.erase(it);
 	}
 }
 
@@ -240,29 +238,37 @@ void ListContainer::eraseRange()
 	{
 		auto it1 = List.begin();
 		auto it2 = List.end();
-		List.erase(it1, it2);
-		cout << "\n\tAll elements starting at begin iterator " << &it1 << " and going up to end iterator "
-			<< &it2 << " have been removed.\n";
+		--it2;
+		cout << "\n\tAll elements starting at begin iterator " << &(*it1) << " and going up to end iterator "
+			<< &(*it2) << " have been removed.\n";
+		List.erase(it1, List.end());
 	}
 }
-/*
-// QQQQQQQ NEED WORK
+
+// QQQQQQQ
 void ListContainer::insertAtIterator()
 {
-	if (List.empty())
-		cout << "\n\t\tThe list is empty.\n";
-	else
+	student newStudent;
+	string name;
+	cout << "\tEnter a new student name: ";
+	cin >> name;
+	newStudent.setName(name);
+	int grade = inputInteger("\tEnter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior): ", 1, 4);
+	switch (grade)
 	{
-		student newStudent;
-		//add function to add new student
-		newStudent.setName("");
-		newStudent.setGradeLevel("");
-		newStudent.setGPA(0.0);
-
-		auto it1 = List.begin();
-		List.insert(it1, "students data");
+	case 1: newStudent.setGradeLevel("Freshman"); break;
+	case 2: newStudent.setGradeLevel("Sophmore"); break;
+	case 3: newStudent.setGradeLevel("Junior"); break;
+	case 4: newStudent.setGradeLevel("Senior"); break;
+	default:
+		break;
 	}
-}*/
+	double newGPA = inputDouble("\tEnter his/her GPA (0.0..4.0): ", 0.0, 4.0);
+	newStudent.setGPA(newGPA);
+
+	auto it1 = List.begin();
+	List.insert(it1, newStudent);
+}
 
 // RRRRRRR
 void ListContainer::swap()
@@ -271,10 +277,8 @@ void ListContainer::swap()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		if (List2.empty())
-			cout << "\n\tlist (l2) is initially empty.\n";
-		else
-			cout << "\n\tlist (l2) has " << List2.size() << " elements.\n";
+		List2.clear();
+		cout << "\n\tlist (l2) is initially empty.\n";
 		List.swap(List2);
 		cout << "\n\tlist (l1) is empty after swapped with list (l2).\n";
 		cout << "\n\tlist (l2) now has " << List2.size() << " element(s).\n";
@@ -291,6 +295,6 @@ void ListContainer::sort()
 		List.sort();
 		cout << "\n\tSorted list:";
 		for (list<student>::iterator it = List.begin(); it != List.end(); ++it)
-			cout << "\n\t\t" << &it << " (" << *it << ')';
+			cout << "\n\t\t" << &(*it) << " (" << *it << ')';
 	}
 }
