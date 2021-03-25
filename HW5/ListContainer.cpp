@@ -69,7 +69,6 @@ void ListContainer::pop_Front()
 		List.pop_front();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
@@ -125,7 +124,6 @@ void ListContainer::pop_Back()
 		List.pop_back();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
