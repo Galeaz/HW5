@@ -28,7 +28,7 @@ public:
 
 	//Precondition: a listContainer object
 	//Postcondition: Print the element
-	void display() {};
+	void display() ;
 
 	//Precondition: a listContainer object
 	//Postcondition: delete all element in size a list
@@ -94,7 +94,7 @@ public:
 
 	//Precondition: a listContainer object
 	//Postcondition: insert an element to where the pointer is pointing
-	void insertAtIterator() {};
+	void insertAtIterator();
 
 	//Precondition: a listContainer object
 	//Postcondition: swap the data between 2 lists
