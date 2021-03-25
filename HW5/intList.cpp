@@ -5,7 +5,6 @@
 
 intList::intList()
 {
-	
 	for (int i = 0; i <= 100; i++)
 		freqArray[i] = 0;
 }
@@ -74,5 +73,5 @@ void intList::dispFreq() const
 		}
 
 	}
-	return;
+	
 }

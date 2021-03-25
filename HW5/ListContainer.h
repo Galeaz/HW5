@@ -26,9 +26,6 @@ public:
 	//Postcondition: clear all of the private members
 	~ListContainer();
 
-	//Precondition: a listContainer object
-	//Postcondition: Print the element
-	void display() ;
 
 	//Precondition: a listContainer object
 	//Postcondition: delete all element in size a list
