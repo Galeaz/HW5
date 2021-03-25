@@ -22,82 +22,85 @@ public:
 	//Postcondition: creates a default ListContainer
 	ListContainer();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: clear all of the private members
 	~ListContainer();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: Print the element
-	void display() {};
+	void display() ;
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: delete all element in size a list
 	void clear();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: set size for a list
 	void resize();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: delete the element on the top of the list
 	void pop_Front();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: read data from the file and input it in front of the list
 	void readFront();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: read data from the file and input it in the back of the list
 	void readEnd();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: print the first element of a list
 	void front();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: delete the element at the back of the list
 	void pop_Back();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: print the element at the back of the list
 	void back();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: return the pointer to the first element of the list
 	void beginIterator();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: return the poiner to the last element of the list
 	void endIterator();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: print all element inside the list using begin() and end() function
 	void printAllElementsBeginEnd();
-
+	//Precondition: a listContainer object
+	//Postcondition: returns a reverse iterator pointing to the end of the list
 	void rBegin();
+	//Precondition: a listContainer object
+	//Postcondition: returns a reverse iterator pointing to the element before the front of the list
 	void rEnd();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: print all element inside the list using rbegin() and rend() function
 	void printAllElementsrBeginrEnd();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: delete an element after the pointer
 	void eraseWithIterator();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: delete the elements at the beginning of the iterator to the end of the iterator
 	void eraseRange();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: insert an element to where the pointer is pointing
 	void insertAtIterator();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: swap the data between 2 lists
 	void swap();
 
-	//Precondition: N/A
+	//Precondition: a listContainer object
 	//Postcondition: sort the data in a list
 	void sort();
 };

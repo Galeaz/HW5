@@ -39,6 +39,7 @@ void intList::deleteInteger()
 	if (removed==false)
 	{ 
 		cout << "\nList does not contain " << holder << '\n';
+		return;
 	}
 }
 void intList::dispIntegers() const
@@ -48,9 +49,14 @@ void intList::dispIntegers() const
 		for (auto it = list.begin(); it != list.end(); ++it)
 			cout << *it << ' ';
 		cout << '\n';
+		return;
 	}
 	else
+	{
 		cout << "Empty\n";
+		return;
+	}
+	
 }
 
 void intList::dispFreq() const
@@ -68,5 +74,5 @@ void intList::dispFreq() const
 		}
 
 	}
-
+	return;
 }

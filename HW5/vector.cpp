@@ -1,4 +1,4 @@
-// Participants:
+// Participants: Duyen Tran and Lincoln Nguyen
 // Date: 03-16-21
 // Description: vector implementation
 #include <iostream>
