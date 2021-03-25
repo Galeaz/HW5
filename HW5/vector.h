@@ -1,4 +1,4 @@
-// Participants:
+// Participants:  Duyen Tran and Lincoln Nguyen
 // Date: 03-16-21
 // Description: vector header
 
@@ -22,68 +22,90 @@ private:
 	vector<student> v2;
 
 public:
-	//Constructor
+	//precondition:N/A
+	//Postcondition:constructor
 	Vector()
 	{}
 
-	//display
+	//precondition:N/A
+    //Postcondition: display
 	void display();
 
-	// Removes all elements from the vector(which are destroyed
+
+	//precondition:a vector 
+	//Postcondition: Removes all elements from the vector 
 	void Clear();
 
-	//Requests that the vector capacity be at least enough to contain n elements"
+	//precondition: a vector
+	//Postcondition:Requests that the vector capacity be at least enough to contain n elements"
 	void Reserve();
 
-	//Resizes the container so that it contains n elements
+	//precondition:A vector
+	//Postcondition: Resizes the container so that it contains n elements
 	void Resize();
 
-	//Read input.dat and push_back(e) - Adds a new element at the end of the vector
+	//precondition:dile "input.dat" and a vector
+	//Postcondition: Adds a new element at the end of the vector
 	void readFile();
 
-	//Removes the last element in the vector
+	//precondition: A vector not empty
+	//Postcondition: Removes the last element in the vector
 	void Pop_back();
 
-	//-Returns a reference to the first element in the vector
+	//precondition:a vector 
+	//Postcondition:Returns a reference to the first element in the vector
 	void Front();
 
-	//Returns a reference to the last element in the vector
+	//precondition: A vector not empty
+	//Postcondition: Returns a reference to the last element in the vector
 	void Back();
 
-	//Returns a reference to the element at position n in the vector
+	//precondition: A vector not empty
+	//Postcondition: Returns a reference to the element at position n in the vector
 	void indexAt();
 
-	//Returns an iterator pointing to the first element in the vector
+	//precondition: A vector not empty
+	//Postcondition:Returns an iterator pointing to the first element in the vector
 	void Begin();
 
-	//Returns an iterator referring to the past - the - end element in the vector
+	//precondition: A vector not empty
+	//Postcondition:Returns an iterator referring to the past - the - end element in the vector
 	void End();
 
-	//Using iterator begin() and end() returns all elements in the vector
+	//precondition: A vector not empty
+	//Postcondition:Using iterator begin() and end() returns all elements in the vector
 	void returnAllElements();
 
-	//Returns a reverse iterator pointing to the last element in the vector
+	//precondition: A vector not empty
+	//Postcondition:Returns a reverse iterator pointing to the last element in the vector
 	void Rbegin();
 
-	//Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector
+	//precondition: A vector not empty
+	//Postcondition:Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector
 	void Rend();
 
-	//Using iterator rbegin() and rend() returns all elements in the vector
+	//precondition: A vector not empty
+	//Postcondition:Using iterator rbegin() and rend() returns all elements in the vector
 	void ReturnEle();
 
-	//Removes from the vector a single element(using an iterator)
+	//precondition: A vector not empty
+	//Postcondition:Removes from the vector a single element(using an iterator)
 	void Erase();
 
-	//Removes from the vector a range of elements(using iterators)
+	//precondition: A vector not empty
+	//Postcondition:Removes from the vector a range of elements(using iterators)
 	void RangeErase();
 
-	//Insert a new entry at the iterator
+	//precondition: A vector
+	//Postcondition:Insert a new entry at the iterator
 	void Insert();
 
-	// Exchanges the content of the container by another vector's content of the same type
+	//precondition: two vectors
+	//Postcondition: Exchanges the content of the container by another vector's content of the same type
 	void Swap();
 
-	// Sorts the vector
+	//precondition: A vector not empty
+	//Postcondition: Sorts the vector
 	void Sort();
 };
 
