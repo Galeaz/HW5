@@ -18,11 +18,18 @@ using namespace std;
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
 
+//Precondition: The program is running and user selects menu 1
+//Postcondition: starts the driver for program 1
 void menu1();
-char menu2();
+//Precondition: The program is running and user selects menu 2
+//Postcondition: starts the driver for program 2
 void part2();
+//Precondition: The program is running and user selects menu 3
+//Postcondition: starts the driver for program 3
 void menu3();
-
+//Precondition: menu 2's driver is running
+//Postcondition: returns the users choice
+char menu2();
 int main()
 {
 	do
