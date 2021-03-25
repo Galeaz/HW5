@@ -24,9 +24,12 @@ public:
 	void back();
 	void beginIterator();
 	void endIterator();
-	void printAllElements();
+	void printAllElementsBeginEnd();
 	void rBegin();
 	void rEnd();
+	void printAllElementsrBeginrEnd();
+	void eraseWithIterator();
+	void eraseRange();
 };
 
 ListContainer::ListContainer()
@@ -161,7 +164,6 @@ void ListContainer::beginIterator()
 	else
 	{
 		list<string>::iterator it = List.begin();
-		it++;
 		cout << "\n\tThe iterator refering the first element: " << &it << " (" << *it << ")\n";
 	}
 }
@@ -179,7 +181,7 @@ void ListContainer::endIterator()
 }
 
 // KKKKKK
-void ListContainer::printAllElements()
+void ListContainer::printAllElementsBeginEnd()
 {
 	if (List.empty())
 		cout << "\n\t\tThe list is empty.\n";
@@ -214,3 +216,52 @@ void ListContainer::rEnd()
 		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &it;
 	}
 }
+
+// NNNNNNN
+void ListContainer::printAllElementsrBeginrEnd()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		cout << "\n\tUsing begin() and end(), the vector contains:\n";
+		for (auto it = List.rbegin(); it != List.rend(); ++it)
+			cout << "\n\t\t" << &it << " (" << *it << ')';
+	}
+}
+
+// OOOOOO
+void ListContainer::eraseWithIterator()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		auto it = List.begin();
+		List.erase(it);
+		cout << "\n\tAn element after the begin iterator " << &it << " has been removed.\n";
+	}
+}
+
+// PPPPPPP
+void ListContainer::eraseRange()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		auto it1 = List.begin();
+		auto it2 = List.end();
+		List.erase(it1,it2);
+		cout << "\n\tAll elements starting at begin iterator " << &it1 << " and going up to end iterator "
+			<< &it2 << " have been removed.\n";
+	}
+}
+
+// QQQQQQQ
+
+
+// RRRRRRR
+
+
+// SSSSSSS

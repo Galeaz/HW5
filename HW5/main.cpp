@@ -66,7 +66,6 @@ int menuOption()
 
 char menu2()
 {
-	system("cls");
 	cout << "\n\tA. Clear() - Destroys all elements from the list\n";
 	cout << "\tB. Resize(n) - Changes the list so that it contains n elements\n";
 	cout << "\tC. Read input.dat and push_front(e) - Adds a new element at the front of the list\n";
@@ -117,12 +116,12 @@ void part2()
 		case 'h': test.back(); break;
 		case 'i': test.beginIterator(); break;
 		case 'j': test.endIterator(); break;
-		case 'k': test.printAllElements(); break;
+		case 'k': test.printAllElementsBeginEnd(); break;
 		case 'l': test.rBegin(); break;
 		case 'm': test.rEnd(); break;
-		case 'n':/*function();*/ break;
-		case 'o':/*function();*/ break;
-		case 'p':/*function();*/ break;
+		case 'n': test.printAllElementsrBeginrEnd(); break;
+		case 'o': test.eraseWithIterator(); break;
+		case 'p': test.eraseRange(); break;
 		case 'q':/*function();*/ break;
 		case 'r':/*function();*/ break;
 		case 's':/*function();*/ break;
@@ -133,7 +132,6 @@ void part2()
 		if (option == '0')
 			break;
 		cout << "\n\n";
-		system("pause");
 	}
 }
 
