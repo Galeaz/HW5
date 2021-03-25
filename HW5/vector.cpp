@@ -287,13 +287,19 @@ void  Vector::RangeErase()
 //Insert a new entry at the iterator
 void  Vector::Insert()
 {
+	if (v1.empty())
+	{
+		cout << "\nvector does not have reserved space\n";
+		return;
+
+	}
 	student Student;
 
 	string name;
 	int gradeOption;
 	string gradeLevel;
 	double GPA;
-	vector<student>::iterator position;
+	vector<student>::iterator position = v1.begin();
 	
 
 	cout << "Enter a new student name: ";
@@ -318,12 +324,9 @@ void  Vector::Insert()
 	Student.setName(name);
 	Student.setGradeLevel(gradeLevel);
 	Student.setGPA(GPA);
-	if (!v1.empty())
-	{
-		position = v1.insert(position, Student);
-	}
-	else
-		v1.push_back(Student);
+	position = v1.insert(position, Student);
+	
+
 	cout << "The new element has been inserted after the begin iterator." << endl;
 }
 
