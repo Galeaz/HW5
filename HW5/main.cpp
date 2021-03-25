@@ -17,11 +17,11 @@ using namespace std;
 //Precondition: N/A
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
-void tester();
 
 char menu2();
 void part2();
 void menu3();
+
 int main()
 {
 	do
@@ -114,8 +114,8 @@ void part2()
 		case 'f':test.readEnd(); break;
 		case 'g':test.pop_Back(); break;
 
-		case 'h':/*function();*/ break;
-		case 'i':/*function();*/ break;
+		case 'h': test.back(); break;
+		case 'i': test.begin(); break;
 		case 'j':/*function();*/ break;
 		case 'k':/*function();*/ break;
 		case 'l':/*function();*/ break;

@@ -21,6 +21,8 @@ public:
 	void readEnd();
 	void front();
 	void pop_Back();
+	void back();
+	void begin();
 };
 
 ListContainer::ListContainer()
@@ -136,4 +138,21 @@ void ListContainer::pop_Back()
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
 		display();
 	}
+}
+
+// HHHHHHH
+void ListContainer::back()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+		cout << "\n\tThe last element from the list is (" << List.back() << ")\n";
+}
+
+// IIIIIII
+void ListContainer::begin()
+{
+	list<string>::iterator it = List.begin();
+	it++;
+	cout << "\n\tThe iterator refering the first element: "<< &it << " (" << *it << ")\n";
 }
