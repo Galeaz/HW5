@@ -1,3 +1,6 @@
+//provided by professor Quach. Thank you, professor!
+//date: 3/24/2019
+//description: contains all information relation to the student class.
 
 #pragma once
 
