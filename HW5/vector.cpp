@@ -1,7 +1,6 @@
-// Participants: Duyen Tran and Lincoln Nguyen
+// Participants:
 // Date: 03-16-21
 // Description: vector implementation
-/*
 #include <iostream>
 #include"vector.h"
 #include"input.h"
@@ -14,8 +13,7 @@
 
 using namespace std;
 
-//precondition:N/A
-//Postcondition: display
+//display
 void Vector::display()
 {
 	for (int i = 0; i < v1.size(); i++)
@@ -24,8 +22,7 @@ void Vector::display()
 	}
 }
 
-//precondition:a vector 
-//Postcondition: Removes all elements from the vector 
+// Removes all elements from the vector(which are destroyed
 void Vector::Clear()
 {
 	v1.clear();
@@ -33,8 +30,7 @@ void Vector::Clear()
 	cout << " The vector has been cleared." << endl;
 }
 
-//precondition: a vector
-//Postcondition:Requests that the vector capacity be at least enough to contain n elements"
+//Requests that the vector capacity be at least enough to contain n elements"
 void  Vector::Reserve()
 {
 	int newCapacity = inputInteger("Enter the capacity(1..100):", 1, 100);
@@ -44,8 +40,7 @@ void  Vector::Reserve()
 	cout << "The vector has been reserved " << v1.capacity() << " elements" << endl;
 }
 
-//precondition:A vector
-//Postcondition: Resizes the container so that it contains n elements
+//Resizes the container so that it contains n elements
 void  Vector::Resize()
 {
 	int newSize = inputInteger(" Enter the new size(1..100): ", 1, 100);
@@ -55,13 +50,14 @@ void  Vector::Resize()
 	cout << " The vector has been resized to " << v1.size() << " elements." << endl;
 }
 
-//precondition:dile "input.dat" and a vector
-//Postcondition: Adds a new element at the end of the vector
+//Read input.dat and push_back(e) - Adds a new element at the end of the vector
 void  Vector::readFile()
 {
 	ifstream file;
-	string data;
-
+	string name;
+	string level;
+	string gpa;
+	char trash;
 	file.open("input.dat");
 	if (file.fail())
 	{
@@ -71,20 +67,21 @@ void  Vector::readFile()
 
 	while (!file.eof())
 	{
-		getline(file, data);
-
-		v1.push_back(data);
-
-		if (file.eof())
-			break;
+		student temp;
+		getline(file, name, ',');
+		getline(file, level, ',');
+		getline(file, gpa, '\n');
+		temp.setName(name);
+		temp.setGradeLevel(level);
+		temp.setGPA(stod(gpa));
+		v1.push_back(temp);
 	}
 
 	file.close();
 	cout << "\n\tThe vector now has " << v1.size() << " elements.\n";
 }
 
-//precondition: A vector not empty
-//Postcondition: Removes the last element in the vector
+//Removes the last element in the vector
 void  Vector::Pop_back()
 {
 	if (!v1.empty())
@@ -105,8 +102,7 @@ void  Vector::Pop_back()
 
 }
 
-//precondition:a vector 
-//Postcondition:Returns a reference to the first element in the vector
+//-Returns a reference to the first element in the vector
 void  Vector::Front()
 {
 	if (!v1.empty())
@@ -119,8 +115,7 @@ void  Vector::Front()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Returns a reference to the last element in the vector
+//Returns a reference to the last element in the vector
 void  Vector::Back()
 {
 	if (!v1.empty())
@@ -133,8 +128,7 @@ void  Vector::Back()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Returns a reference to the element at position n in the vector
+//Returns a reference to the element at position n in the vector
 void  Vector::indexAt()
 {
 	if (!v1.empty())
@@ -157,8 +151,7 @@ void  Vector::indexAt()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition:Returns an iterator pointing to the first element in the vector
+//Returns an iterator pointing to the first element in the vector
 void  Vector::Begin()
 {
 	vector<student>::iterator position = v1.begin();
@@ -173,8 +166,7 @@ void  Vector::Begin()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition:Returns an iterator referring to the past - the - end element in the vector
+//Returns an iterator referring to the past - the - end element in the vector
 void  Vector::End()
 {
 	vector<student>::iterator position = v1.end();
@@ -189,8 +181,7 @@ void  Vector::End()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Using iterator begin() and end() returns all elements in the vector
+//Using iterator begin() and end() returns all elements in the vector
 void  Vector::returnAllElements()
 {
 	vector<student>::iterator position;
@@ -210,8 +201,7 @@ void  Vector::returnAllElements()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition Returns a reverse iterator pointing to the last element in the vector
+//Returns a reverse iterator pointing to the last element in the vector
 void  Vector::Rbegin()
 {
 	vector<student>::reverse_iterator positionR = v1.rbegin();
@@ -226,8 +216,7 @@ void  Vector::Rbegin()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition:Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector
+//Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector
 void  Vector::Rend()
 {
 	vector<student>::reverse_iterator positionR = v1.rend();
@@ -242,8 +231,7 @@ void  Vector::Rend()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Using iterator rbegin() and rend() returns all elements in the vector
+//Using iterator rbegin() and rend() returns all elements in the vector
 void  Vector::ReturnEle()
 {
 	vector<student>::reverse_iterator positionR;
@@ -263,8 +251,7 @@ void  Vector::ReturnEle()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Removes from the vector a single element(using an iterator)
+//Removes from the vector a single element(using an iterator)
 void  Vector::Erase()
 {
 	vector<student>::iterator position = v1.begin();
@@ -279,8 +266,7 @@ void  Vector::Erase()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition :Removes from the vector a range of elements(using iterators)
+//Removes from the vector a range of elements(using iterators)
 void  Vector::RangeErase()
 {
 	vector<student>::iterator positionBegin = v1.begin();
@@ -298,37 +284,46 @@ void  Vector::RangeErase()
 	}
 }
 
-//precondition: A vector
-//Postcondition:Insert a new entry at the iterator
+//Insert a new entry at the iterator
 void  Vector::Insert()
 {
 	student Student;
 
 	string name;
+	int gradeOption;
 	string gradeLevel;
 	double GPA;
 
 	vector<student>::iterator position = v1.begin();
 
 	cout << "Enter a new student name: ";
+	cin.ignore(10000, '\n');
+	cin.clear();
 	getline(cin, name);
 	cout << endl;
 
-	cout << "Enter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior): ";
-	getline(cin, gradeLevel);
-	cout << endl;
 
+	gradeOption = inputInteger("Enter the his/her level (1-Freshman, 2-Sophmore, 3-Junior, or 4-Senior): ", 1, 4);
+	cout << endl;
+	switch (gradeOption)
+	{
+	case 1: gradeLevel = "Freshman"; break;
+	case 2: gradeLevel = "Sophmore"; break;
+	case 3: gradeLevel = "Junior"; break;
+	case 4: gradeLevel = "Senior"; break;
+	}
 	cout << "Enter his/her GPA (0.0..4.0):";
 	cin >> GPA;
 	cout << endl;
-
-	position = v1.insert(position, Student);
+	Student.setName(name);
+	Student.setGradeLevel(gradeLevel);
+	Student.setGPA(GPA);
+	position = v1.insert(position + 1, Student);
 
 	cout << "The new element has been inserted after the begin iterator." << endl;
 }
 
-//precondition: two vectors
-//Postcondition: Exchanges the content of the container by another vector's content of the same type
+// Exchanges the content of the container by another vector's content of the same type
 void  Vector::Swap()
 {
 	cout << "Vector (v2) is initially empty." << endl << endl;
@@ -343,12 +338,10 @@ void  Vector::Swap()
 	}
 }
 
-//precondition: A vector not empty
-//Postcondition: Sorts the vector
+// Sorts the vector
 void  Vector::Sort()
 {
 	sort(v1.begin(), v1.end());
 
 	display();
 }
-*/

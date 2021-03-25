@@ -18,7 +18,7 @@ using namespace std;
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
 
-void menu1() {};
+void menu1();
 char menu2();
 void part2();
 void menu3();
@@ -55,7 +55,7 @@ int menuOption()
 	cout << "\t" << char(204) << string(42, char(205)) << char(185) << "\n";
 	cout << "\t" << char(186) << "   1: Vector Container                    " << char(186) << "\n";
 	cout << "\t" << char(186) << "   2: List Container                      " << char(186) << "\n";
-	cout << "\t" << char(186) << "   3: Aplication using a List Container   " << char(186) << "\n";
+	cout << "\t" << char(186) << "   3: Application using a List Container  " << char(186) << "\n";
 	cout << "\t" << char(199) << string(42, char(196)) << char(182) << "\n";
 	cout << "\t" << char(186) << "   0: Exit                                " << char(186) << "\n";
 	cout << "\t" << char(200) << string(42, char(205)) << char(188) << "\n";
@@ -168,7 +168,7 @@ void menu3()
     } while (true);
    return;
 }
-/*
+
 void menu1()
 {
 	student s1;
@@ -220,9 +220,7 @@ void menu1()
 			cout << char(205);
 		}
 		cout << endl;
-
-		cout << "                Option: " << endl;
-		option = inputChar("", input);
+		option = inputChar("Option: ", input);
 		if (option == '0')
 			break;
 		switch (toupper(option))
@@ -290,4 +288,3 @@ void menu1()
 		system("pause");
 	}
 }
-*/
