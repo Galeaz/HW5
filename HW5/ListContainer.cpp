@@ -162,7 +162,7 @@ void ListContainer::endIterator()
 	else
 	{
 		auto it = List.end();
-		cout << "\n\tThe iterator referring to the past-the-end element: " << &(*it);
+		cout << "\n\tThe iterator referring to the past-the-end element: " << &it;
 	}
 }
 
