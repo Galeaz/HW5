@@ -14,12 +14,12 @@
 class ListContainer
 {
 private:
-	list<string> List;
-	list<string> List2;
+	list<student> List;
+	list<student> List2;
 public:
 	ListContainer();
 	//forgot to do the destructor, will add it later - minh
-	void display();
+	void display() {};
 	void clear();
 	void resize();
 	void pop_Front();
@@ -36,7 +36,7 @@ public:
 	void printAllElementsrBeginrEnd();
 	void eraseWithIterator();
 	void eraseRange();
-	void insertAtIterator();
+	void insertAtIterator() {};
 	void swap();
 	void sort();
 };

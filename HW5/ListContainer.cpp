@@ -9,12 +9,15 @@ ListContainer::ListContainer()
 	List = {};
 	List2 = {};
 }
-void ListContainer::display()
+
+/*void ListContainer::display()
 {
+	if (List.empty())
+		cout << "THIS LIST IS EMPTY";
 	cout << "\n";
 	for (auto i : List)
 		cout << "\t\t" << i << "\n";
-}
+}*/
 
 // AAAAAAAAAAAAA
 void ListContainer::clear()
@@ -36,18 +39,26 @@ void ListContainer::readFront()
 {
 	ifstream file;
 	string data;
+	student newElement;
 
 	file.open("input.dat");
 	if (file.fail())
 	{
-		cout << "ERROR: file1.txt does not found.\n";
-		exit(1);
+		cout << "ERROR: The file does not found.\n";
+		return;
 	}
 
 	while (!file.eof())
 	{
-		getline(file, data);
-		List.push_front(data);
+		getline(file, data, ',');
+		newElement.setName(data);
+		getline(file, data, ',');
+		newElement.setGradeLevel(data);
+		getline(file, data, '\n');
+		newElement.setGPA(stod(data));
+
+		List.push_front(newElement);
+
 		if (file.eof())
 			break;
 	}
@@ -85,6 +96,7 @@ void ListContainer::readEnd()
 {
 	ifstream file;
 	string data;
+	student newElement;
 
 	file.open("input.dat");
 	if (file.fail())
@@ -95,8 +107,14 @@ void ListContainer::readEnd()
 
 	while (!file.eof())
 	{
-		getline(file, data);
-		List.push_back(data);
+		getline(file, data, ',');
+		newElement.setName(data);
+		getline(file, data, ',');
+		newElement.setGradeLevel(data);
+		getline(file, data, '\n');
+		newElement.setGPA(stod(data));
+
+		List.push_back(newElement);
 		if (file.eof())
 			break;
 	}
@@ -136,7 +154,7 @@ void ListContainer::beginIterator()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		list<string>::iterator it = List.begin();
+		list<student>::iterator it = List.begin();
 		cout << "\n\tThe iterator refering the first element: " << &it << " (" << *it << ")\n";
 	}
 }
@@ -161,7 +179,7 @@ void ListContainer::printAllElementsBeginEnd()
 	else
 	{
 		cout << "\n\tUsing begin() and end(), the vector contains:\n";
-		for (list<string>::iterator it = List.begin(); it != List.end(); ++it)
+		for (list<student>::iterator it = List.begin(); it != List.end(); ++it)
 			cout << "\n\t\t" << &it << " (" << *it << ')';
 	}
 }
@@ -230,7 +248,7 @@ void ListContainer::eraseRange()
 			<< &it2 << " have been removed.\n";
 	}
 }
-
+/*
 // QQQQQQQ NEED WORK
 void ListContainer::insertAtIterator()
 {
@@ -247,7 +265,7 @@ void ListContainer::insertAtIterator()
 		auto it1 = List.begin();
 		List.insert(it1, "students data");
 	}
-}
+}*/
 
 // RRRRRRR
 void ListContainer::swap()
@@ -275,7 +293,7 @@ void ListContainer::sort()
 	{
 		List.sort();
 		cout << "\n\tSorted list:";
-		for (list<string>::iterator it = List.begin(); it != List.end(); ++it)
+		for (list<student>::iterator it = List.begin(); it != List.end(); ++it)
 			cout << "\n\t\t" << &it << " (" << *it << ')';
 	}
 }

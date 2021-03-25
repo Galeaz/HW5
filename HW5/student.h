@@ -21,16 +21,34 @@ public:
 		name = newName;
 	}
 
+	//accessor
+	string getName(student theStudent)
+	{
+		return theStudent.name;
+	}
+
 	//mutator
 	void setGradeLevel(string newGradeLevel)
 	{
 		gradeLevel = newGradeLevel;
 	}
 
+	//accessor
+	string getGradeLevel(student theStudent)
+	{
+		return theStudent.gradeLevel;
+	}
+
 	//mutator
 	void setGPA(double newGPA)
 	{
 		GPA = newGPA;
+	}
+
+	//accessor
+	double getGPA(student theStudent)
+	{
+		return theStudent.GPA;
 	}
 
 	//overloading operator <<
