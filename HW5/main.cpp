@@ -119,7 +119,7 @@ void part2()
 		case 'j': test.endIterator(); break;
 		case 'k': test.printAllElements(); break;
 		case 'l': test.rBegin(); break;
-		case 'm':/*function();*/ break;
+		case 'm': test.rEnd(); break;
 		case 'n':/*function();*/ break;
 		case 'o':/*function();*/ break;
 		case 'p':/*function();*/ break;

@@ -26,6 +26,7 @@ public:
 	void endIterator();
 	void printAllElements();
 	void rBegin();
+	void rEnd();
 };
 
 ListContainer::ListContainer()
@@ -172,7 +173,6 @@ void ListContainer::endIterator()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		List.push_back("");
 		auto it = List.end();
 		cout << "\n\tThe iterator referring to the past-the-end element: " << &it;
 	}
@@ -186,9 +186,7 @@ void ListContainer::printAllElements()
 	else
 	{
 		cout << "\n\tUsing begin() and end(), the vector contains:\n";
-		list<string>::iterator it = List.begin();
-		it++;
-		for (it; it != List.end(); ++it)
+		for (list<string>::iterator it = List.begin(); it != List.end(); ++it)
 			cout << "\n\t\t" << &it << " (" << *it << ')';
 	}
 }
@@ -200,8 +198,19 @@ void ListContainer::rBegin()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		auto it = List.rbegin();
-		
+		auto it = List.rbegin();		
 		cout << "\n\tThe iterator referring the reverse first element: " << &it << " (" << *it << ")\n";
+	}
+}
+
+// MMMMMMMM
+void ListContainer::rEnd()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		auto it = List.rend();
+		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &it;
 	}
 }
