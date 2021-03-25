@@ -10,6 +10,7 @@ class ListContainer
 {
 private:
 	list<string> List;
+	list<string> List2;
 public:
 	ListContainer();
 	//forgot to do the destructor, will add it later - minh
@@ -38,6 +39,7 @@ public:
 ListContainer::ListContainer()
 {
 	List = {};
+	List2 = {};
 }
 void ListContainer::display()
 {
@@ -261,20 +263,48 @@ void ListContainer::eraseRange()
 	}
 }
 
-// QQQQQQQ
+// QQQQQQQ NEED WORK
 void ListContainer::insertAtIterator()
 {
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		student newStudent;
+		//add function to add new student
+		newStudent.setName("");
+		newStudent.setGradeLevel("");
+		newStudent.setGPA(0.0);
 
+		auto it1 = List.begin();
+		List.insert(it1, "students data");
+	}
 }
 
 // RRRRRRR
 void ListContainer::swap()
 {
-
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		if (List2.empty())
+			cout << "\n\tlist (l2) is initially empty.\n";
+		else
+			cout << "\n\tlist (l2) has " << List2.size() << " elements.\n";
+		List.swap(List2);
+		cout << "\n\tlist (l1) is empty after swapped with list (l2).\n";
+		cout << "\n\tlist (l2) now has " << List2.size() << " element(s).\n";
+	}
 }
 
 // SSSSSSS
 void ListContainer::sort()
 {
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
 
+	}
 }

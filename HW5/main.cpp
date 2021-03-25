@@ -122,9 +122,9 @@ void part2()
 		case 'n': test.printAllElementsrBeginrEnd(); break;
 		case 'o': test.eraseWithIterator(); break;
 		case 'p': test.eraseRange(); break;
-		case 'q':/*function();*/ break;
-		case 'r':/*function();*/ break;
-		case 's':/*function();*/ break;
+		case 'q': test.insertAtIterator(); break;
+		case 'r': test.swap(); break;
+		case 's': test.sort(); break;
 
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 
