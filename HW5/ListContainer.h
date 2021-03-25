@@ -18,7 +18,6 @@ private:
 	list<student> List2;
 public:
 	ListContainer();
-	void display() {};
 	void clear();
 	void resize();
 	void pop_Front();
