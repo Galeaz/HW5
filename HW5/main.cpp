@@ -115,9 +115,9 @@ void part2()
 		case 'g':test.pop_Back(); break;
 
 		case 'h': test.back(); break;
-		case 'i': test.begin(); break;
-		case 'j':/*function();*/ break;
-		case 'k':/*function();*/ break;
+		case 'i': test.beginIterator(); break;
+		case 'j': test.endIterator(); break;
+		case 'k': test.printAllElements(); break;
 		case 'l':/*function();*/ break;
 		case 'm':/*function();*/ break;
 		case 'n':/*function();*/ break;

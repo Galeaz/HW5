@@ -22,7 +22,10 @@ public:
 	void front();
 	void pop_Back();
 	void back();
-	void begin();
+	void beginIterator();
+	void endIterator();
+	void printAllElements();
+	void rBegin();
 };
 
 ListContainer::ListContainer()
@@ -150,9 +153,46 @@ void ListContainer::back()
 }
 
 // IIIIIII
-void ListContainer::begin()
+void ListContainer::beginIterator()
 {
-	list<string>::iterator it = List.begin();
-	it++;
-	cout << "\n\tThe iterator refering the first element: "<< &it << " (" << *it << ")\n";
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		list<string>::iterator it = List.begin();
+		it++;
+		cout << "\n\tThe iterator refering the first element: " << &it << " (" << *it << ")\n";
+	}
+}
+
+// JJJJJJJ
+void ListContainer::endIterator()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		List.push_back("");
+		auto it = List.end();
+		cout << "\n\tThe iterator referring to the past-the-end element: " << &it;
+	}
+}
+
+// KKKKKK
+void ListContainer::printAllElements()
+{
+	if (List.empty())
+		cout << "\n\t\tThe list is empty.\n";
+	else
+	{
+		cout << "\n\tUsing begin() and end(), the vector contains:\n";
+		for (list<string>::iterator it = List.begin(); it != List.end(); ++it)
+			cout << '\n' << &it << " (" << *it << ")\n";
+	}
+}
+
+// LLLLLLL
+void ListContainer::rBegin()
+{
+
 }
