@@ -305,6 +305,9 @@ void ListContainer::sort()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-
+		List.sort();
+		cout << "\n\tSorted list:";
+		for (list<string>::iterator it = List.begin(); it != List.end(); ++it)
+			cout << "\n\t\t" << &it << " (" << *it << ')';
 	}
 }
