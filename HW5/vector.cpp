@@ -56,7 +56,7 @@ void  Vector::readFile()
 	ifstream file;
 	string name;
 	string level;
-	double gpa;
+	string gpa;
 	char trash;
 	file.open("input.dat");
 	if (file.fail())
@@ -70,11 +70,10 @@ void  Vector::readFile()
 		student temp;
 		getline(file, name, ',');
 		getline(file, level, ',');
-		file >> gpa;
-		name.erase(remove(name.begin(), name.end(), '\n'));
+		getline(file, gpa, '\n');
 		temp.setName(name);
 		temp.setGradeLevel(level);
-		temp.setGPA(gpa);
+		temp.setGPA(stod(gpa));
 		v1.push_back(temp);
 	}
 
