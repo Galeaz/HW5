@@ -143,12 +143,14 @@ void menu3()
     intList f1;
     do
     {
+		system("cls");
         cout << "\n3> Application using Vector and/or List container\n";
         cout << string(60, char(205));
         cout << "\n\t  A> Add an integer\n";
         cout << "\t  B> Delete an integer\n";
         cout << "\t  C> Display input integers\n";
         cout << "\t  D> display frequencies of integers\n";
+		cout << string(60, char(196)) << '\n';
         cout << "\t  0> return\n";
         cout << string(60, char(205));
         choice = toupper(inputChar("\nOption:", allowed));
@@ -159,12 +161,12 @@ void menu3()
         switch (choice)
         {
         case('A'): f1.addInteger(); break;
-        case('B'): f1.deleteInteger(); break;
+		case('B'): f1.deleteInteger(); break;
         case('C'): f1.dispIntegers(); break;
         case('D'): f1.dispFreq(); break;
 
         }
-
+		system("pause");
     } while (true);
    return;
 }
@@ -180,46 +182,34 @@ void menu1()
 	while (true)
 	{
 		system("cls");
-		cout << endl << "        Vectors are sequence containers representing arrays that can change in size." << endl << endl;
-		cout << "        1> Vector's member functions" << endl << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << char(205);
-		}
-		cout << endl;
-		cout << "                A> clear() - Removes all elements from the vector (which are destroyed)" << endl;
-		cout << "                B> reserve(n) - Requests that the vector capacity be at least enough to contain n elements" << endl;
-		cout << "                C> resize(n) - Resizes the container so that it contains n elements" << endl;
-		cout << "                D> Read input.dat and push_back(e) - Adds a new element at the end of the vector" << endl;
-		cout << "                E> pop_back() - Removes the last element in the vector" << endl;
-		cout << "                F> front() - Returns a reference to the first element in the vector" << endl;
-		cout << "                G > back() - Returns a reference to the last element in the vector" << endl;
-		cout << "                H > index using at() or []) - Returns a reference to the element at position n in the vector" << endl;
-		cout << "                I > begin() - Returns an iterator pointing to the first element in the vector" << endl;
-		cout << "                J > end() Returns an iterator referring to the past - the - end element in the vector" << endl;
-		cout << "                K > Using iterator begin() and end() returns all elements in the vector" << endl;
-		cout << "                L > rbegin() - Returns a reverse iterator pointing to the last element in the vector" << endl;
-		cout << "                M > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first" << "                                      "
+		cout << endl << "\tVectors are sequence containers representing arrays that can change in size." << endl << endl;
+		cout << "\t1> Vector's member functions" << endl << "        ";
+		cout << string(100, char(205)) << endl;
+		cout << "\t\tA> clear() - Removes all elements from the vector (which are destroyed)" << endl;
+		cout << "\t\tB> reserve(n) - Requests that the vector capacity be at least enough to contain n elements" << endl;
+		cout << "\t\tC> resize(n) - Resizes the container so that it contains n elements" << endl;
+		cout << "\t\tD> Read input.dat and push_back(e) - Adds a new element at the end of the vector" << endl;
+		cout << "\t\tE> pop_back() - Removes the last element in the vector" << endl;
+		cout << "\t\tF> front() - Returns a reference to the first element in the vector" << endl;
+		cout << "\t\tG > back() - Returns a reference to the last element in the vector" << endl;
+		cout << "\t\tH > index using at() or []) - Returns a reference to the element at position n in the vector" << endl;
+		cout << "\t\tI > begin() - Returns an iterator pointing to the first element in the vector" << endl;
+		cout << "\t\tJ > end() Returns an iterator referring to the past - the - end element in the vector" << endl;
+		cout << "\t\tK > Using iterator begin() and end() returns all elements in the vector" << endl;
+		cout << "\t\tL > rbegin() - Returns a reverse iterator pointing to the last element in the vector" << endl;
+		cout << "\t\tM > rend() - Returns a reverse iterator pointing to the theoretical element preceding the first" << "                                      "
 			<< "element in the vector" << endl;
-		cout << "                N> Using iterator rbegin() and rend() returns all elements in the vector" << endl;
-		cout << "                O > erase(it) - Removes from the vector a single element(using an iterator)" << endl;
-		cout << "                P > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)" << endl;
-		cout << "                Q> insert(it, entry) - Insert a new entry at the iterator." << endl;
-		cout << "                R > swap() - Exchanges the content of the container by another vector's content of the same type" << endl;
-		cout << "                S > Sort - Sorts the vector." << endl;
+		cout << "\t\tN> Using iterator rbegin() and rend() returns all elements in the vector" << endl;
+		cout << "\t\tO > erase(it) - Removes from the vector a single element(using an iterator)" << endl;
+		cout << "\t\tP > erase(start_it, end_it) - Removes from the vector a range of elements(using iterators)" << endl;
+		cout << "\t\tQ> insert(it, entry) - Insert a new entry at the iterator." << endl;
+		cout << "\t\tR > swap() - Exchanges the content of the container by another vector's content of the same type" << endl;
+		cout << "\t\tS > Sort - Sorts the vector." << endl;
 		cout << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << "_";
-		}
-		cout << endl;
-		cout << "                0> return" << endl;
+		cout << string(100, char(205)) << endl;
+		cout << "\t\t0> return" << endl;
 		cout << "        ";
-		for (int i = 0; i < 100; i++)
-		{
-			cout << char(205);
-		}
-		cout << endl;
+		cout << string(100, char(196)) << endl;
 		option = inputChar("Option: ", input);
 		if (option == '0')
 			break;
