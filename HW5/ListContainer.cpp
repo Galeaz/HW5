@@ -199,7 +199,7 @@ void ListContainer::rEnd()
 	else
 	{
 		auto it = List.rend();
-		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &(*it);
+		cout << "\n\tThe iterator referring to the reverse past-the-end element: " << &it;
 	}
 }
 
