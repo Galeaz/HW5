@@ -18,7 +18,7 @@ using namespace std;
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
 
-void menu1();
+void menu1() {};
 char menu2();
 void part2();
 void menu3();
@@ -168,7 +168,7 @@ void menu3()
     } while (true);
    return;
 }
-
+/*
 void menu1()
 {
 	student s1;
@@ -290,3 +290,4 @@ void menu1()
 		system("pause");
 	}
 }
+*/

@@ -1,7 +1,7 @@
 // Participants:
 // Date: 03-16-21
 // Description: vector header
-
+/*
 #pragma once
 #include<iostream>
 #include<vector>
@@ -406,3 +406,4 @@ void  Vector::Sort()
 
 	display();
 }
+*/
