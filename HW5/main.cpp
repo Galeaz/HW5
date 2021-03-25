@@ -31,7 +31,7 @@ int main()
 		{
 		case 0:  exit(0);
 		case 1:  system("cls"); menu1(); break;
-		case 2:  system("cls"); part2(); break;//tester(); break;
+		case 2:  system("cls"); part2(); break;
 		case 3:  system("cls"); menu3(); break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}

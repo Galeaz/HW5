@@ -10,6 +10,12 @@ ListContainer::ListContainer()
 	List2 = {};
 }
 
+ListContainer::~ListContainer()
+{
+	List.clear();
+	List2.clear();
+}
+
 // AAAAAAAAAAAAA
 void ListContainer::clear()
 {
@@ -69,7 +75,6 @@ void ListContainer::pop_Front()
 		List.pop_front();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
@@ -125,7 +130,6 @@ void ListContainer::pop_Back()
 		List.pop_back();
 
 		cout << "\n\tThe list now has " << List.size() << " elements.\n";
-		display();
 	}
 }
 
@@ -169,7 +173,7 @@ void ListContainer::printAllElementsBeginEnd()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		cout << "\n\tUsing begin() and end(), the vector contains:\n";
+		cout << "\n\tUsing begin() and end(), the list contains:\n";
 		for (list<student>::iterator it = List.begin(); it != List.end(); ++it)
 			cout << "\n\t\t" << &(*it) << " (" << *it << ')';
 	}
@@ -206,7 +210,7 @@ void ListContainer::printAllElementsrBeginrEnd()
 		cout << "\n\t\tThe list is empty.\n";
 	else
 	{
-		cout << "\n\tUsing begin() and end(), the vector contains:\n";
+		cout << "\n\tUsing begin() and end(), the list contains:\n";
 		for (auto it = List.rbegin(); it != List.rend(); ++it)
 			cout << "\n\t\t" << &(*it) << " (" << *it << ')';
 	}
