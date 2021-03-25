@@ -68,7 +68,7 @@ int menuOption()
 char menu2()
 {
 	
-	cout << "\n\t\t1> list's member functions\n";
+	cout << "\n\t\t2> list's member functions\n";
 	cout << '\t'<<string(100, char(205));
 	cout << "\n\t\tA. Clear() - Destroys all elements from the list\n";
 	cout << "\t\tB. Resize(n) - Changes the list so that it contains n elements\n";
