@@ -57,7 +57,7 @@ void  Vector::readFile()
 	string name;
 	string level;
 	string gpa;
-	char trash;
+	//char trash;
 	file.open("input.dat");
 	if (file.fail())
 	{

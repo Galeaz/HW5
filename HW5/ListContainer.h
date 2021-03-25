@@ -91,7 +91,7 @@ public:
 
 	//Precondition: N/A
 	//Postcondition: insert an element to where the pointer is pointing
-	void insertAtIterator() {};
+	void insertAtIterator();
 
 	//Precondition: N/A
 	//Postcondition: swap the data between 2 lists
