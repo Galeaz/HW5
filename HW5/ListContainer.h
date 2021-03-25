@@ -18,7 +18,6 @@ private:
 	list<student> List2;
 public:
 	ListContainer();
-	//forgot to do the destructor, will add it later - minh
 	void display() {};
 	void clear();
 	void resize();
