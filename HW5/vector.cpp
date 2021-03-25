@@ -257,7 +257,7 @@ void  Vector::Erase()
 	vector<student>::iterator position = v1.begin();
 	if (!v1.empty())
 	{
-		cout << " An element after the begin iterator " << &position + 1 << " has been removed" << endl;
+		cout << " An element pointed at by the begin iterator " << &position << " has been removed" << endl;
 		v1.erase(v1.begin());
 	}
 	else
