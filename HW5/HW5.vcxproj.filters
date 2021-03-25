@@ -24,6 +24,9 @@
     <ClCompile Include="intList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="input.h">
