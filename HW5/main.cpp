@@ -67,29 +67,33 @@ int menuOption()
 
 char menu2()
 {
-	cout << "\n\tA. Clear() - Destroys all elements from the list\n";
-	cout << "\tB. Resize(n) - Changes the list so that it contains n elements\n";
-	cout << "\tC. Read input.dat and push_front(e) - Adds a new element at the front of the list\n";
-	cout << "\tD. pop_front() - Deletes the first element\n";
-	cout << "\tE. front() - Accesses the first element\n";
-	cout << "\tF. Read input.dat and push_back(e) - Adds a new element at the end of the list\n";
-	cout << "\tG. pop_back() - Delete the last element\n";
-	cout << "\tH. back() Accesses the last element\n";
-	cout << "\tI. begin() - Returns an iterator refereing to the first element in the list\n";
-	cout << "\tJ. end() Returns an iterator referring to the past-the-end element in the list\n";
-	cout << "\tK. Using iterator begin() and end() returns all elements in the list\n";
-	cout << "\tL. rbegin() - Returns a reverse iterator pointing to the last element in the list\n";
-	cout << "\tM. rend() - Returns a reverse iterator pointing to the element preceding the first element in the list\n";
-	cout << "\tN. Using iterator rbegin() and rend() returns all elements in the list\n";
-	cout << "\tO. erase(it) - Removes from the vector a single element(using an iterator)\n";
-	cout << "\tP. erase(start_it,end_it) - Removes from the vector a range of elements( using iterators)\n";
-	cout << "\tQ. insert(it, entry) - Insert a new entry at the iterator.\n";
-	cout << "\tR. swap() - Exchanges the content of the container by another list's content of the same type\n";
-	cout << "\tS. Sort - Sorts the list.\n";
-	cout << "\t0. return\n";
-
+	
+	cout << "\n\t\t1> list's member functions\n";
+	cout << '\t'<<string(100, char(205));
+	cout << "\n\t\tA. Clear() - Destroys all elements from the list\n";
+	cout << "\t\tB. Resize(n) - Changes the list so that it contains n elements\n";
+	cout << "\t\tC. Read input.dat and push_front(e) - Adds a new element at the front of the list\n";
+	cout << "\t\tD. pop_front() - Deletes the first element\n";
+	cout << "\t\tE. front() - Accesses the first element\n";
+	cout << "\t\tF. Read input.dat and push_back(e) - Adds a new element at the end of the list\n";
+	cout << "\t\tG. pop_back() - Delete the last element\n";
+	cout << "\t\tH. back() Accesses the last element\n";
+	cout << "\t\tI. begin() - Returns an iterator refereing to the first element in the list\n";
+	cout << "\t\tJ. end() Returns an iterator referring to the past-the-end element in the list\n";
+	cout << "\t\tK. Using iterator begin() and end() returns all elements in the list\n";
+	cout << "\t\tL. rbegin() - Returns a reverse iterator pointing to the last element in the list\n";
+	cout << "\t\tM. rend() - Returns a reverse iterator pointing to the element preceding the first element in the list\n";
+	cout << "\t\tN. Using iterator rbegin() and rend() returns all elements in the list\n";
+	cout << "\t\tO. erase(it) - Removes from the vector a single element(using an iterator)\n";
+	cout << "\t\tP. erase(start_it,end_it) - Removes from the vector a range of elements( using iterators)\n";
+	cout << "\t\tQ. insert(it, entry) - Insert a new entry at the iterator.\n";
+	cout << "\t\tR. swap() - Exchanges the content of the container by another list's content of the same type\n";
+	cout << "\t\tS. Sort - Sorts the list.\n";
+	cout <<'\t' <<string(100, char(196));
+	cout << "\n\t0. return\n";
+	cout <<'\t' <<string(100, char(205));
 	string str = "abcdefghijklmnopqrs0";
-	char option = inputChar("\tOption: ", str);
+	char option = inputChar("\n\tOption: ", str);
 
 	return option;
 }
@@ -134,6 +138,7 @@ void part2()
 			break;
 		cout << "\n\n";
 	}
+	
 }
 
 void menu3()
