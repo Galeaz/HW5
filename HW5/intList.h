@@ -17,9 +17,6 @@ public:
 	intList();
 	//preconditions:  A intList object 
 	//postconditions: returns true if the list is empty, false if it is not
-	bool empty() const;
-	//preconditions:  A intList object
-	//postconditions: adds an input integer into the list
 	void addInteger();
 	//preconditions:  A intList object
 	//postconditions: Deletes a chosen integer from the list
